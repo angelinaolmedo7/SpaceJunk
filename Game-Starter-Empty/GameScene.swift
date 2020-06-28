@@ -27,9 +27,13 @@ class GameScene: SKScene {
     var sequenceAction : SKAction!
     var repeatAction : SKAction!
     var groupAction : SKAction!
+    var repeatMusic : SKAction!
     
     let crossFade = SKTransition.crossFade(withDuration: 0.5)
     let gameOverScene = GameOverScene()
+    
+    let soundBGLoop = SKAction.playSoundFileNamed("SynthBassline.wav", waitForCompletion: true)
+    
       
     override func sceneDidLoad() {
         
@@ -64,6 +68,7 @@ class GameScene: SKScene {
         particles.position = spaceship.position
         addChild(particles)
         spaceship.particles = particles
+        
     }
     
     func setGlobalActions() {
@@ -73,6 +78,8 @@ class GameScene: SKScene {
         sequenceAction = SKAction.sequence([moveToBottom, removeAction])
         repeatAction = SKAction.repeatForever(rotateAction)
         groupAction = SKAction.group([sequenceAction, repeatAction])
+        
+        repeatMusic = SKAction.repeatForever(soundBGLoop)
     }
   
     override func didMove(to view: SKView) {
@@ -81,6 +88,11 @@ class GameScene: SKScene {
         self.updateScoreLabel()
         
         spaceship.resetShip()
+        
+        // music
+        
+        self.removeAllActions()
+        self.run(repeatMusic)
     }
     
   
@@ -167,6 +179,9 @@ class GameScene: SKScene {
         self.enumerateChildNodes(withName: "//debris") { node, stop  in
             node.run(self.removeAction)
         }
+        
+        // stop music
+        self.removeAllActions()
     }
     
     
