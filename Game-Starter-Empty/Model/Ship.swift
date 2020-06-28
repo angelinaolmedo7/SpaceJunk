@@ -48,6 +48,11 @@ class Ship: SKSpriteNode {
         }
     }
     
+    func resetShip() {
+        self.removeAllActions()
+        position = CGPoint(x: sceneWidth/2, y: 100)
+    }
+    
     required init?(coder aDecoder: NSCoder){
         fatalError("init(coder:) has not been implemented")
     }

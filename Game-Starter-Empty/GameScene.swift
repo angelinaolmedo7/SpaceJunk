@@ -72,6 +72,8 @@ class GameScene: SKScene {
         // Called when the scene has been displayed
         self.score = 0
         self.updateScoreLabel()
+        
+        spaceship.resetShip()
     }
     
   
@@ -119,6 +121,7 @@ class GameScene: SKScene {
         print("DEAD")
         gameOverScene.score = self.score
         self.score = 0
+        self.cleanUpObjects()
         view?.presentScene(gameOverScene, transition: crossFade)
     }
     
@@ -131,7 +134,7 @@ class GameScene: SKScene {
         scoreLabel.text = "\(self.score!)"
     }
     
-    func spawnNewDebris () {
+    func spawnNewDebris() {
 //        print("new debris. now there are \(self.debris.count + 1) debris.")
         
         let junk = Debris(scene: self)
@@ -140,13 +143,23 @@ class GameScene: SKScene {
         junk.run(groupAction)
     }
     
-    func spawnNewMeteor () {
+    func spawnNewMeteor() {
 //        print("new meteor. now there are \(self.meteors.count) meteors.")
         
         let meteor = Meteor(scene: self)
         self.addChild(meteor)
         
         meteor.run(groupAction)
+    }
+    
+    func cleanUpObjects() {
+        // remove all debris and meteors
+        self.enumerateChildNodes(withName: "//meteor") { node, stop  in
+            node.run(self.removeAction)
+        }
+        self.enumerateChildNodes(withName: "//debris") { node, stop  in
+            node.run(self.removeAction)
+        }
     }
     
     
