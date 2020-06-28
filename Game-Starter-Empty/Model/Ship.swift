@@ -13,6 +13,7 @@ class Ship: SKSpriteNode {
     
     var vel: Double
     var sceneWidth: CGFloat
+    var particles: SKEmitterNode!
     
     init(scene: SKScene, vel: Double=150) {
         let texture = SKTexture(imageNamed: "ship")
@@ -26,6 +27,8 @@ class Ship: SKSpriteNode {
         position = CGPoint(x: sceneWidth/2, y: 100)
         self.zPosition = 2
         self.name = "ship"
+        
+        
     }
     
     func getDuration(left: Bool) -> Double{
@@ -41,16 +44,25 @@ class Ship: SKSpriteNode {
     
     func moveShip(left: Bool) {
         if left {
-            self.run(SKAction.moveTo(x: 0, duration: getDuration(left: true)))
+            let act = SKAction.moveTo(x: 0, duration: getDuration(left: true))
+            self.run(act)
+            if let particles = particles {
+                particles.run(act)
+            }
         }
         else { // right
-            self.run(SKAction.moveTo(x: self.sceneWidth, duration: getDuration(left: false)))
+            let act = SKAction.moveTo(x: self.sceneWidth, duration: getDuration(left: false))
+            self.run(act)
+            if let particles = particles {
+                particles.run(act)
+            }
         }
     }
     
     func resetShip() {
         self.removeAllActions()
         position = CGPoint(x: sceneWidth/2, y: 100)
+        particles.position = self.position
     }
     
     required init?(coder aDecoder: NSCoder){

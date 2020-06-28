@@ -63,6 +63,7 @@ class GameScene: SKScene {
         particles = SKEmitterNode(fileNamed: "Fire.sks")!
         particles.position = spaceship.position
         addChild(particles)
+        spaceship.particles = particles
     }
     
     func setGlobalActions() {
@@ -121,9 +122,6 @@ class GameScene: SKScene {
         if self.meteors.count < 2 {
             self.spawnNewMeteor()
         }
-        
-        //update particles
-        self.particles.position = self.spaceship.position
     }
     
     func meteorCollision() {
@@ -191,6 +189,7 @@ class GameScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         spaceship.removeAllActions()
+        particles.removeAllActions()
     }
     
     
