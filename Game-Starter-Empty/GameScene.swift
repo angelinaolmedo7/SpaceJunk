@@ -125,7 +125,7 @@ class GameScene: SKScene {
     }
     
     func meteorCollision() {
-        print("DEAD")
+//        print("DEAD")
         gameOverScene.score = self.score
         self.score = 0
         self.cleanUpObjects()
