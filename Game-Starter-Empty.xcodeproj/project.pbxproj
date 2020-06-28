@@ -13,6 +13,7 @@
 		2994675324A8F71100A2B3B1 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2994675224A8F71100A2B3B1 /* Fire.sks */; };
 		2994675524A922D100A2B3B1 /* SynthBassline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2994675424A922D100A2B3B1 /* SynthBassline.wav */; };
 		2994675724A9282700A2B3B1 /* Crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2994675624A9282700A2B3B1 /* Crash.wav */; };
+		2994675924A92AF400A2B3B1 /* Alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2994675824A92AF400A2B3B1 /* Alert.wav */; };
 		29EE085524A4B53E00EE52F4 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE085424A4B53E00EE52F4 /* GameOverScene.swift */; };
 		D8A7EBED214AA9C30022E043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7EBEC214AA9C30022E043 /* AppDelegate.swift */; };
 		D8A7EBF3214AA9C30022E043 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7EBF2214AA9C30022E043 /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 		2994675224A8F71100A2B3B1 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 		2994675424A922D100A2B3B1 /* SynthBassline.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SynthBassline.wav; sourceTree = "<group>"; };
 		2994675624A9282700A2B3B1 /* Crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Crash.wav; sourceTree = "<group>"; };
+		2994675824A92AF400A2B3B1 /* Alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Alert.wav; sourceTree = "<group>"; };
 		29EE085424A4B53E00EE52F4 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		D8A7EBE9214AA9C30022E043 /* Game-Starter-Empty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-Starter-Empty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A7EBEC214AA9C30022E043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				D8A7EBFE214AA9C40022E043 /* Info.plist */,
 				2994675424A922D100A2B3B1 /* SynthBassline.wav */,
 				2994675624A9282700A2B3B1 /* Crash.wav */,
+				2994675824A92AF400A2B3B1 /* Alert.wav */,
 			);
 			path = "Game-Starter-Empty";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2994675924A92AF400A2B3B1 /* Alert.wav in Resources */,
 				D8A7EBF8214AA9C30022E043 /* Main.storyboard in Resources */,
 				2994675324A8F71100A2B3B1 /* Fire.sks in Resources */,
 				2994675524A922D100A2B3B1 /* SynthBassline.wav in Resources */,

@@ -34,6 +34,7 @@ class GameScene: SKScene {
     
     let soundBGLoop = SKAction.playSoundFileNamed("SynthBassline.wav", waitForCompletion: true)
     let soundCrash = SKAction.playSoundFileNamed("Crash.wav", waitForCompletion: false)
+    let soundAlert = SKAction.playSoundFileNamed("Alert.wav", waitForCompletion: false)
     
       
     override func sceneDidLoad() {
@@ -147,6 +148,7 @@ class GameScene: SKScene {
     }
     
     func debrisCollision() {
+        self.run(soundAlert)
         self.score += 1
         self.updateScoreLabel()
     }
