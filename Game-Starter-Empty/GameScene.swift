@@ -33,6 +33,7 @@ class GameScene: SKScene {
     let gameOverScene = GameOverScene()
     
     let soundBGLoop = SKAction.playSoundFileNamed("SynthBassline.wav", waitForCompletion: true)
+    let soundCrash = SKAction.playSoundFileNamed("Crash.wav", waitForCompletion: false)
     
       
     override func sceneDidLoad() {
@@ -138,6 +139,7 @@ class GameScene: SKScene {
     
     func meteorCollision() {
 //        print("DEAD")
+        self.run(soundCrash)
         gameOverScene.score = self.score
         self.score = 0
         self.cleanUpObjects()
@@ -181,7 +183,7 @@ class GameScene: SKScene {
         }
         
         // stop music
-        self.removeAllActions()
+//        self.removeAllActions()
     }
     
     
